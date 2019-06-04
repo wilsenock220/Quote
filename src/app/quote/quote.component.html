@@ -1,0 +1,40 @@
+<div *ngFor='let quote of quotes' class="card text-center">
+    <div class="card-header">
+        Written by: {{quote.thief}}
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p style="color: brown">Your Quote:<br>
+                <h4 style="font-style: italic; color:blue">{{quote.quote}}</h4>
+                <footer class="blockquote-footer">By :  <cite title="Source Title">{{quote.author}}</cite></footer>
+        </blockquote>
+
+        <div style="display: flex; margin-left: 5%; justify-content: space-around; padding-top: 10px">
+            <div>
+                <button type="button" class="btn btn-outline-primary waves-effect">Upvote .</button>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-outline-danger waves-effect">Downvote</button>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="card-footer text-muted">
+        Time:
+    </div>
+
+    <div>
+
+        <button type="submit" class="btn btn-danger"> Delete Quote </button>
+
+    </div>
+
+</div>
+<div class="container">
+    <div class="row">
+        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+    </div>
+</div>
